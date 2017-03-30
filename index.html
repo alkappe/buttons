@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One|Overpass+Mono|Unica+One" rel="stylesheet">
+    <title>cool buttons</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-color: #4286f4;
+      }
+      #big-img {
+        width: 100%;
+        height: auto;
+        color: white;
+        font-size: 40px;
+        margin: auto;
+        border-bottom: dotted 5px white;
+        font-family: 'Overpass Mono', monospace;
+      }
+      h1 {
+        width: 50%;
+        margin: auto;
+        text-align: center;
+        padding: 15vw;
+      }
+      .button-wrapper {
+        width: 20%;
+        height: auto;
+        float: left;
+        padding: 1vw;
+      }
+      #first-button {
+        width: 70px;
+        height: 120px;
+        border-radius: 50px;
+        background-color: #4286f4;
+        border: solid 4px white;
+        position: absolute;
+        animation: move 1s infinite;
+      }
+      #second-button {
+        width: 150px;
+        height: 50px;
+        border: solid 3px white;
+        background-color: #4286f4;
+        border-radius: 5px;
+        margin-left: 2vw;
+        position: relative;
+      }
+      #third-button {
+        width: 150px;
+        height: 50px;
+        border: solid 3px white;
+        background-color: #4286f4;
+        border-radius: 5px;
+        margin: auto;
+      }
+      p {
+        color: white;
+        font-size: 12px;
+        text-transform: lowercase;
+      }
+      #fourth-button {
+        width: 70px;
+        height: 120px;
+        border-radius: 50px;
+        background-color: #4286f4;
+        border: solid 4px white;
+        position: absolute;
+        animation: move 1s infinite;
+      }
+
+      #second-button:hover {
+        background-color: white;
+        position: absolute;
+        color: #4286f4;
+        z-index: -1;
+        border-radius: 100%;
+        transform: scale(0);
+        transition-property: transform;
+        transition-duration: 1.3s;
+        transition-timing-function: ease-out;
+      }
+      #third-button:hover {
+        position: absolute;
+        z-index: 1;
+        background: white;
+        transform: scaleX(0);
+        transform: translate(120px);
+        transform-origin: 0 100%;
+        transition-property: transform;
+        transition-duration: 0.5s;
+        transition-timing-function: ease-out;
+      }
+      p:hover {
+        color: #4286f4;
+      }
+      @keyframes move {
+
+        0%   {
+          bottom: 280px;
+        }
+        100% {
+          bottom: 250px;
+        }
+      }
+
+
+    </style>
+  </head>
+  <body>
+    <div id="big-img">
+      <h1>cool buttons</h1>
+    </div>
+    <div class="button-wrapper">
+      <button id="first-button">
+        <p>jump</p>
+      </button>
+    </div>
+    <div class="button-wrapper">
+      <button id="second-button">
+        <p>cool button</p>
+      </button>
+    </div>
+    <div class="button-wrapper">
+      <button id="third-button">
+        <p>Leistungen</p>
+      </button>
+    </div>
+    <div class="button-wrapper">
+      <button id="fourth-button">
+        <p>creative</p>
+      </button>
+    </div>
+  </body>
+</html>
