@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One|Overpass+Mono|Unica+One" rel="stylesheet">
     <title>cool buttons</title>
     <style>
@@ -17,22 +17,26 @@
         width: 100%;
         height: auto;
         color: white;
-        font-size: 40px;
-        margin: auto;
+        font-size: 30px;
         border-bottom: dotted 5px white;
         font-family: 'Overpass Mono', monospace;
       }
+      main {
+        width: 100%;
+        margin: 0 auto;
+        height: 20vh;
+      }
       h1 {
         width: 50%;
-        margin: auto;
         text-align: center;
+        margin: 0 auto;
         padding: 15vw;
       }
       .button-wrapper {
-        width: 20%;
+        width: 10%;
         height: auto;
         float: left;
-        padding: 1vw;
+        margin: 6vw;
       }
       #first-button {
         width: 70px;
@@ -40,25 +44,31 @@
         border-radius: 50px;
         background-color: #4286f4;
         border: solid 4px white;
-        position: absolute;
+        position: relative;
         animation: move 1s infinite;
+        cursor: pointer;
+        margin: 0 auto;
       }
       #second-button {
-        width: 150px;
-        height: 50px;
+        width: 120px;
+        height: 70px;
         border: solid 3px white;
         background-color: #4286f4;
         border-radius: 5px;
-        margin-left: 2vw;
         position: relative;
+        margin: 0 auto;
+        cursor: pointer;
       }
       #third-button {
-        width: 150px;
-        height: 50px;
+        width: 120px;
+        height: 70px;
         border: solid 3px white;
         background-color: #4286f4;
         border-radius: 5px;
-        margin: auto;
+        margin: 0 auto;
+        position: relative;
+        cursor: pointer;
+
       }
       p {
         color: white;
@@ -66,36 +76,32 @@
         text-transform: lowercase;
       }
       #fourth-button {
-        width: 70px;
-        height: 120px;
+        width: 80px;
+        height: 80px;
         border-radius: 50px;
+        box-shadow: 0px 0px 0px 8px rgba(255,255,255,1);
+        border: rgba(255, 0, 0, 0.3);
+        position: relative;
+        animation: '';
+        cursor: pointer;
+        margin: 0 auto;
         background-color: #4286f4;
-        border: solid 4px white;
-        position: absolute;
-        animation: move 1s infinite;
       }
 
       #second-button:hover {
+
         background-color: white;
-        position: absolute;
         color: #4286f4;
-        z-index: -1;
-        border-radius: 100%;
-        transform: scale(0);
-        transition-property: transform;
-        transition-duration: 1.3s;
-        transition-timing-function: ease-out;
+        font-weight: bold;
+        animation: radial 0.3s cubic-bezier(.32,.63,.83,.67);
       }
       #third-button:hover {
-        position: absolute;
-        z-index: 1;
-        background: white;
-        transform: scaleX(0);
-        transform: translate(120px);
-        transform-origin: 0 100%;
-        transition-property: transform;
-        transition-duration: 0.5s;
-        transition-timing-function: ease-out;
+        color: #4286f4;
+        background-color: white;
+        font-weight: bold;
+        transform-origin: 0% 100%;
+        animation: linear 0.3s cubic-bezier(.32,.63,.83,.67);
+        /*background-image: linear-gradient(to bottom right,rgb(255, 255, 255) 29.3%,rgb(255, 255, 255) 37.5%,rgb(66, 134, 244) 44.7%);*/
       }
       p:hover {
         color: #4286f4;
@@ -103,13 +109,40 @@
       @keyframes move {
 
         0%   {
-          bottom: 280px;
+          bottom: 5vh;
         }
         100% {
-          bottom: 250px;
+          bottom: 0vh;
         }
       }
 
+      @keyframes radial {
+        0% {
+          background-image: radial-gradient(circle 35px at center center,rgb(255, 255, 255) 0%,rgb(255, 255, 255) 18.1%,rgb(66, 134, 244) 100%);
+        }
+        50% {
+          background-image: radial-gradient(circle 180px at center center,rgb(255, 255, 255) 0%,rgb(255, 255, 255) 18.1%,rgb(66, 134, 244) 100%);
+        }
+        100% {
+          background-image: radial-gradient(circle 359px at center center,rgb(255, 255, 255) 0%,rgb(255, 255, 255) 18.1%,rgb(66, 134, 244) 100%);
+        }
+      }
+      @keyframes linear {
+        0% {
+          background-image: linear-gradient(to bottom right,rgb(255, 255, 255) 10.4%,rgb(255, 255, 255) 75.7%,rgb(66, 134, 244) 88.7%);
+        }
+
+        100% {
+          background-image: linear-gradient(to bottom right,rgb(255, 255, 255) 0%,rgb(255, 255, 255) 0%,rgb(66, 134, 244) 6.8%);
+        }
+      }
+
+      @media (max-width: 600px) {
+        .button-wrapper {
+          width: 90%;
+          text-align: center;
+        }
+      }
 
     </style>
   </head>
@@ -117,25 +150,29 @@
     <div id="big-img">
       <h1>cool buttons</h1>
     </div>
-    <div class="button-wrapper">
-      <button id="first-button">
-        <p>jump</p>
-      </button>
-    </div>
-    <div class="button-wrapper">
-      <button id="second-button">
-        <p>cool button</p>
-      </button>
-    </div>
-    <div class="button-wrapper">
-      <button id="third-button">
-        <p>Leistungen</p>
-      </button>
-    </div>
-    <div class="button-wrapper">
-      <button id="fourth-button">
-        <p>creative</p>
-      </button>
-    </div>
+    <main id="box-button">
+      <div class="button-wrapper">
+        <button id="first-button">
+          <p>jump</p>
+        </button>
+      </div>
+      <div class="button-wrapper">
+        <button id="second-button">
+          <p>cool button</p>
+        </button>
+      </div>
+      <div class="button-wrapper">
+        <button id="third-button">
+          <p>Leistungen</p>
+        </button>
+      </div>
+      <div class="button-wrapper">
+        <div class="rotate">
+          <button id="fourth-button">
+            <p>creative</p>
+          </button>
+        </div>
+      </div>
+  </main>
   </body>
 </html>
